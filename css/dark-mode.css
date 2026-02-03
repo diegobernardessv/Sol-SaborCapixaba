@@ -33,3 +33,11 @@ body.dark-mode {
 .dark-mode a:active {
     color: var(--link-hover);
 }
+
+.dark-mode .info-section {
+    background-color: rgba(50, 50, 50, 0.5);
+}
+
+.dark-mode .copyright {
+    color: #999;
+}

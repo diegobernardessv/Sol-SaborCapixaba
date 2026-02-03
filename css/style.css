@@ -14,7 +14,7 @@
 }
 
 body {
-    background-image: url(images/coffee_background.jpg);
+    background-image: url(../images/coffee_background.jpg);
     background-repeat: no-repeat;
     background-color: var(--bg-color);
     background-size: cover;
@@ -70,6 +70,62 @@ hr {
     margin: 20px 0;
 }
 
+/* THEME SWITCH */
+.theme-switch-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 28px;
+    position: relative;
+    width: 54px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 20px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 20px;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 .item {
     display: flex;
     justify-content: space-between;
@@ -121,6 +177,68 @@ hr {
   
   a:hover, a:active {
     color: var(--link-hover);
+  }
+
+  /* INFO SECTIONS */
+  .info-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    animation: fadeInUp 0.6s ease;
+  }
+
+  .info-section h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .schedule p,
+  .contact p {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  section {
+    animation: slideIn 0.5s ease;
+  }
+
+  h1 {
+    animation: fadeInUp 0.8s ease;
+  }
+
+  .item {
+    animation: fadeInUp 0.5s ease;
   }
 
   @media screen and (max-width: 480px) {
